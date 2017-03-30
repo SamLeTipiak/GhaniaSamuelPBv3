@@ -2,15 +2,16 @@ package org.formation.service;
 
 import java.util.List;
 
-import javax.inject.Inject;
+
 
 import org.formation.beans.Client;
+import org.formation.dao.DAOClient;
 import org.formation.dao.IDAOClient;
 
 public class ServiceClient implements IServiceClient {
 
-	@Inject
-	private IDAOClient daoClient;
+//	@Inject
+	private IDAOClient daoClient = new DAOClient();
 
 	@Override
 	public void createClient(Client client) throws Exception {

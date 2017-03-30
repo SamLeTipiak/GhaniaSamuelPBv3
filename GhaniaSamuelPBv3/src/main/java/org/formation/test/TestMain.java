@@ -1,15 +1,22 @@
 package org.formation.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import org.formation.beans.Client;
+import org.formation.presentation.ClientController;
 
 public class TestMain {
 	static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-pu");
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		EntityManager em = emf.createEntityManager();
@@ -44,7 +51,24 @@ public class TestMain {
 				em.close();
 			}
 		}
+		
+		List<Client> clients = new ArrayList<>();
+		ClientController clientController = new ClientController(clients);
+		
+		clientController.loadClients();
+		System.out.println("coucou");
+		System.out.println(clientController.readList().get(1));
+	
+		
+//		System.out.println(clientController.readClient(3));
+		
 		System.exit(0);
+		
+		
+		
 	}
+	
+
+	
 
 }

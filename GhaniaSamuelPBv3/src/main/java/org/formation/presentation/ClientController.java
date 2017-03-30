@@ -1,19 +1,31 @@
 package org.formation.presentation;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import org.formation.beans.Client;
 import org.formation.service.IServiceClient;
+import org.formation.service.ServiceClient;
 
-public class ClientController {
+@ManagedBean
+@SessionScoped
+public class ClientController implements Serializable {
 
-	@Inject
-	IServiceClient serviceClient;
+	private static final long serialVersionUID = 1L;
+
+	
+	IServiceClient serviceClient = new ServiceClient();
+	
 	private List<Client> clients = new ArrayList<>();
 	Client client = new Client();
+
+	public ClientController() {
+		super();
+	}
 
 	public ClientController(List<Client> clients) {
 		super();
@@ -60,6 +72,7 @@ public class ClientController {
 			clients = serviceClient.readList();
 
 		} catch (Exception e) {
+			e.getMessage();
 
 		} finally {
 
