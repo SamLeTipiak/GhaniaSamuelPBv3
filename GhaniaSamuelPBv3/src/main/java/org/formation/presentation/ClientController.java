@@ -3,9 +3,12 @@ package org.formation.presentation;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 
 import org.formation.beans.Client;
 import org.formation.service.IServiceClient;
@@ -81,18 +84,41 @@ public class ClientController implements Serializable{
 		}
 	}
 
-	public void deleteClient(long idClient) {
+	public String deleteClient(long idClient) {
 		try {
 			serviceClient.deleteClient(idClient);
 		} catch (Exception e) {
+			e.printStackTrace();
+			return "";
 		} finally {
 
 		}
+		return "";
 
 	}
 
 	public List<Client> getClients() {
 		return clients;
+	}
+	
+	
+	public String loadClient(int idClient){
+		
+		try {
+			
+			Client client = serviceClient.readClient(idClient);
+			
+			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+
+			Map<String, Object> requestMap = externalContext.getRequestMap();
+			requestMap.put("client", client);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "";
+		}
+		
+		return "update.xhtml";
 	}
 
 }

@@ -10,7 +10,7 @@ public class TestCreationDB {
 		// TODO Auto-generated method stub
 		IDAOClient dao = new DAOClient();
 		
-		Client client1 = new Client("Coco", "hugo", "45 rue belle", 45645, "paris", "124578996");
+		Client client1 = new Client("Cocu", "hugu", "45 rue bellu", 45645, "Parus", "01014578996");
 		
 		try {
 			dao.createClient(client1);
