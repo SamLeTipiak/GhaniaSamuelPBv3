@@ -1,6 +1,6 @@
 package org.formation.presentation;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +13,7 @@ import org.formation.service.ServiceClient;
 
 @ManagedBean
 @SessionScoped
-public class ClientController implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class ClientController {
 
 	IServiceClient serviceClient = new ServiceClient();
 
