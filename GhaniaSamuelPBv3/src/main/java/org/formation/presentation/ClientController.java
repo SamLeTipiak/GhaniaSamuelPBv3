@@ -17,9 +17,8 @@ public class ClientController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	
 	IServiceClient serviceClient = new ServiceClient();
-	
+
 	private List<Client> clients = new ArrayList<>();
 	Client client = new Client();
 
@@ -57,8 +56,14 @@ public class ClientController implements Serializable {
 	}
 
 	public Client readClient(long idClient) {
+		
+		Client client = new Client();
+		try {
+			client =  serviceClient.readClient(idClient);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return client;
-
 	}
 
 	public List<Client> readList() {

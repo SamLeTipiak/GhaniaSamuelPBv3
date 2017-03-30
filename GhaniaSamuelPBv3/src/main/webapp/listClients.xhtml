@@ -5,9 +5,9 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 
-<f:metadata>
-  <f:event type="preRenderView" listener="#{clientController.loadClients()}"/>
-</f:metadata>
+<!-- <f:metadata> -->
+<!--   <f:event type="preRenderView" listener="#{clientController.loadClients()}"/> -->
+<!-- </f:metadata> -->
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -22,8 +22,10 @@
 		<h:outputText value="Création d'un nouveau client : " />
 
 		<h:button value="Nouveau client" outcome="createClient.xhtml" />
-	
-	<h:dataTable value="#{clientController.clients}" var="tempClient">
+
+<!-- 		<f:event type="preRenderView" listener="#{clientController.loadClients()}" /> -->
+
+		<h:dataTable value="#{clientController.clients}" var="tempClient">
 
 			<h:column>
 				<f:facet name="header">Identifiant</f:facet>
@@ -34,27 +36,27 @@
 				<f:facet name="header">Prénom</f:facet>
 				<h:outputText value="#{tempClient.firstName}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">Nom</f:facet>
 				<h:outputText value="#{tempClient.lastName}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">Adresse</f:facet>
 				<h:outputText value="#{tempClient.address}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">Code Postal</f:facet>
 				<h:outputText value="#{tempClient.zipCode}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">Ville</f:facet>
 				<h:outputText value="#{tempClient.city}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">Numéro de téléphone</f:facet>
 				<h:outputText value="#{tempClient.phoneNumer}" />
