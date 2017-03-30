@@ -5,11 +5,10 @@ xmlns:h="http://xmlns.jcp.org/jsf/html"
 xmlns:f="http://xmlns.jcp.org/jsf/core">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Création d'un client</title>
+<title>Mise à jour</title>
 </head>
 <h:body>
-
-<h1> Rentrez les informations du client </h1>
+<h1>Modification des données personnelles : </h1>
 
 	<h:form>
 		<h:panelGrid columns="3">
@@ -37,8 +36,9 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
 			<h:inputText id="phone" value="#{client.phoneNumer}" />
 			<h:message for="phone"></h:message>
 			
+			<h:inputHidden value="#{client.idClient}" />
 			
-			<h:commandButton value="Sauvegarde" action="#{clientController.createClient(client)}"/>
+			<h:commandButton value="Sauvegarde" action="#{clientController.updateClient(client)}"/>
 		
 			<h:commandButton value="Retour à la liste"  action="listClients"/>
 		

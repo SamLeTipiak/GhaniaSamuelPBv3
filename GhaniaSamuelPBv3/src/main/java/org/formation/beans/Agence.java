@@ -21,7 +21,7 @@ public class Agence {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long idAgence;
 	private String creationDate;
-	@OneToMany(mappedBy="agence", cascade=CascadeType.ALL)
+	@OneToMany( cascade=CascadeType.ALL)
 	private List<Adviser> Advisers = new ArrayList<>();
 	private Set<Client>clients = new HashSet<>();
 	
