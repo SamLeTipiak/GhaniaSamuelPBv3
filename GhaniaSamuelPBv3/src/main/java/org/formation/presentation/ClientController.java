@@ -17,6 +17,7 @@ public class ClientController implements Serializable{
 
 	 private static final long serialVersionUID = 1L;
 
+
 	IServiceClient serviceClient = new ServiceClient();
 
 	private List<Client> clients = new ArrayList<>();
