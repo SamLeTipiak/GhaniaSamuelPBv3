@@ -1,10 +1,16 @@
 package org.formation.beans;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.faces.bean.ManagedBean;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Client
@@ -19,14 +25,19 @@ import javax.persistence.Id;
 public class Client {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idClient;
+
+	@Column(nullable = false)
 	private String lastName;
+	@Column(nullable = false)
 	private String firstName;
 	private String address;
 	private int zipCode;
 	private String city;
 	private String phoneNumer;
+	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+	private Set<Account> accounts = new HashSet<>();
 
 	public Client() {
 		super();
@@ -40,6 +51,18 @@ public class Client {
 		this.zipCode = zipCode;
 		this.city = city;
 		this.phoneNumer = phoneNumer;
+	}
+
+	public Client(String lastName, String firstName, String address, int zipCode, String city, String phoneNumer,
+			Set<Account> accounts) {
+		super();
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.address = address;
+		this.zipCode = zipCode;
+		this.city = city;
+		this.phoneNumer = phoneNumer;
+		this.accounts = accounts;
 	}
 
 	public String getLastName() {
@@ -90,13 +113,26 @@ public class Client {
 		this.phoneNumer = phoneNumer;
 	}
 
-	
 	public long getIdClient() {
 		return idClient;
 	}
 
 	public void setIdClient(long idClient) {
 		this.idClient = idClient;
+	}
+
+	public Set<Account> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(Set<Account> accounts) {
+		this.accounts = accounts;
+	}
+
+	public void addAccount(Account account) {
+
+		account.setClient(this);
+		this.accounts.add(account);
 	}
 
 	@Override

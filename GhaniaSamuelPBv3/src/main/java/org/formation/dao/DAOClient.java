@@ -26,6 +26,7 @@ public class DAOClient implements IDAOClient {
 			txn.begin();
 
 			em.persist(client);
+			
 
 			txn.commit();
 

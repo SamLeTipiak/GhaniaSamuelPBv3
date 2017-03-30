@@ -10,8 +10,9 @@ public class DAOTest {
 	public static void main(String[] args) {
 		
 		IDAOClient dao = new DAOClient();
-		
-		Client client1 = new Client("Coco", "hugo", "45 rue belle", 45645, "paris", "124578996");
+//		
+//		Client client1 = new Client("Coco", "hugo", "45 rue belle", 45645, "paris", "124578996");
+//		Client c2 = new Client("nom", "prenom",new Account(5644, 565.56, "jsf"));
 		
 		
 		System.out.println("avant le try");
