@@ -22,9 +22,25 @@ public class ClientController {
 
 	public void createClient(Client client) {
 
+		try {
+
+			serviceClient.createClient(client);
+
+		} catch (Exception e) {
+
+		}
+
 	}
 
 	public void updateClient(Client client) {
+
+		try {
+
+			serviceClient.updateClient(client);
+
+		} catch (Exception e) {
+
+		}
 
 	}
 
@@ -36,19 +52,27 @@ public class ClientController {
 	public List<Client> readList() {
 		return clients;
 	}
-	
+
 	public void loadClients() {
 		clients.clear();
-		
+
 		try {
 			clients = serviceClient.readList();
-			
+
 		} catch (Exception e) {
-			
+
+		} finally {
+
 		}
 	}
 
 	public void deleteClient(long idClient) {
+		try {
+			serviceClient.deleteClient(idClient);
+		} catch (Exception e) {
+		} finally {
+
+		}
 
 	}
 
