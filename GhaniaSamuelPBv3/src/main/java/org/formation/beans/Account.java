@@ -15,14 +15,15 @@ public class Account {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	private long idAccount;
 	private static long accountNumber;
 	private double sold;
 	private String openDate;
-	private enum type {
+	public enum type {
 		SavingAccount, CurrentAccount;
 	}
 	protected type accountType;
+	private double accountRate;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="client_id")
@@ -34,9 +35,9 @@ public class Account {
 	}
 
 
-	public Account(long id, long accountNumber, double sold, String openDate) {
+	public Account(long idAccount, long accountNumber, double sold, String openDate) {
 		super();
-		this.id = id;
+		this.idAccount = idAccount;
 		Account.accountNumber = accountNumber;
 		this.sold = sold;
 		this.openDate = openDate;
@@ -48,6 +49,15 @@ public class Account {
 		Account.accountNumber = accountNumber;
 		this.sold = sold;
 		this.openDate = openDate;
+	}
+
+	
+
+	public Account(double sold, String openDate, type accountType) {
+		super();
+		this.sold = sold;
+		this.openDate = openDate;
+		this.accountType = accountType;
 	}
 
 
@@ -86,10 +96,42 @@ public class Account {
 	}
 
 
+	public double getAccountRate() {
+		return accountRate;
+	}
+
+
+	public void setAccountRate(double accountRate) {
+		this.accountRate = accountRate;
+	}
+
+
 	public void setClient(Client client) {
 		this.client = client;
 	}
 	
-	
+	public void remuneration(Account account) {
+		
+		if (accountType == type.SavingAccount) {
+		
+			
+			accountRate = 0.03;
+			
+		}else {
+			accountRate = 0.0;
+			
+		}
+	}
+
+
+	public type getAccountType() {
+		return accountType;
+	}
+
+
+	public void setAccountType(type accountType) {
+		this.accountType = accountType;
+	}
+
 
 }

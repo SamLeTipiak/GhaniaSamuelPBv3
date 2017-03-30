@@ -22,7 +22,7 @@ import javax.persistence.OneToMany;
 
 @ManagedBean
 @Entity
-public class Client {
+public class Client extends Actor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

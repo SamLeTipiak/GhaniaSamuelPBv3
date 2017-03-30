@@ -96,6 +96,7 @@ public class DAOClient implements IDAOClient {
 
 	@Override
 	public List<Client> readList() throws SQLException {
+		
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		List<Client> clients = new ArrayList<>();

@@ -9,6 +9,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import org.formation.beans.Account;
+import org.formation.beans.Account.type;
 import org.formation.beans.Client;
 
 public class TestMain {
@@ -37,7 +38,8 @@ public class TestMain {
 		// 75016, "Paris", "0602030606");
 		Client client1 = new Client("kiki", "hugo", "45 rue belle", 45645, "paris", "124578996");
 
-		Account ac1 = new Account(5644, 565.56, "jsf");
+	
+		Account ac1 = new Account(5644.34, "565", type.SavingAccount);
 		Account ac2 = new Account(545, 545.22, "445564");
 //		Set<Account> accounts = new HashSet<>();
 		client1.addAccount(ac1);
