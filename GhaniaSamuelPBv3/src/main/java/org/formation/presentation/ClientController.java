@@ -89,4 +89,8 @@ public class ClientController implements Serializable {
 
 	}
 
+	public List<Client> getClients() {
+		return clients;
+	}
+
 }

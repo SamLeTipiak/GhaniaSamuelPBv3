@@ -90,6 +90,15 @@ public class Client {
 		this.phoneNumer = phoneNumer;
 	}
 
+	
+	public long getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(long idClient) {
+		this.idClient = idClient;
+	}
+
 	@Override
 	public String toString() {
 		return "Client [lastName=" + lastName + ", firstName=" + firstName + ", address=" + address + ", zipCode="
