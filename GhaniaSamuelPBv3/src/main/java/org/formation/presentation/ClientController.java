@@ -13,9 +13,9 @@ import org.formation.service.ServiceClient;
 
 @ManagedBean
 @SessionScoped
-public class ClientController implements Serializable {
+public class ClientController implements Serializable{
 
-	private static final long serialVersionUID = 1L;
+	 private static final long serialVersionUID = 1L;
 
 	IServiceClient serviceClient = new ServiceClient();
 
@@ -56,18 +56,14 @@ public class ClientController implements Serializable {
 	}
 
 	public Client readClient(long idClient) {
-		
+
 		Client client = new Client();
 		try {
-			client =  serviceClient.readClient(idClient);
+			client = serviceClient.readClient(idClient);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return client;
-	}
-
-	public List<Client> readList() {
-		return clients;
 	}
 
 	public void loadClients() {
