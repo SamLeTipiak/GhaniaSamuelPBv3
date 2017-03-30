@@ -35,28 +35,30 @@ public class ClientController implements Serializable{
 		this.clients = clients;
 	}
 
-	public void createClient(Client client) {
+	public String createClient(Client client) {
 
 		try {
 
 			serviceClient.createClient(client);
 
 		} catch (Exception e) {
-
+			e.printStackTrace();
+			return "";
 		}
-
+		return "listClients.xhtml";	
 	}
 
-	public void updateClient(Client client) {
+	public String updateClient(Client client) {
 
 		try {
 
 			serviceClient.updateClient(client);
 
 		} catch (Exception e) {
-
+			e.printStackTrace();
+			return "";
 		}
-
+		return "listClients.xhtml";
 	}
 
 	public Client readClient(long idClient) {

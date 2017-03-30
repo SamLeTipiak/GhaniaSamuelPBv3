@@ -1,15 +1,51 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Cr�ation d'un client</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Création d'un client</title>
 </head>
-<body>
+<h:body>
 
 <h1> Rentrez les informations du client </h1>
 
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel>Prénom : </h:outputLabel>
+			<h:inputText id="firstName" value="#{client.firstName}" />
+			<h:message for="firstName"></h:message>
+			
+			<h:outputLabel>Nom : </h:outputLabel>
+			<h:inputText id="lastName" value="#{client.lastName}" />
+			<h:message for="lastName"></h:message>	
+			
+			<h:outputLabel>Adresse : </h:outputLabel>
+			<h:inputText id="address" value="#{client.address}" />
+			<h:message for="address"></h:message>
+			
+			<h:outputLabel>Code Postal : </h:outputLabel>
+			<h:inputText id="zipcode" value="#{client.zipCode}" />
+			<h:message for="zipcode"></h:message>
+			
+			<h:outputLabel>Ville : </h:outputLabel>
+			<h:inputText id="city" value="#{client.city}" />
+			<h:message for="city"></h:message>
+			
+			<h:outputLabel>Numéro : </h:outputLabel>
+			<h:inputText id="phone" value="#{client.phoneNumer}" />
+			<h:message for="phone"></h:message>
+			
+			
+			<h:commandButton value="Sauvegarde" action="#{clientController.createClient(client)}"/>
+		
+			<h:commandButton value="Retour à la liste"  action="listClients"/>
+		
+		</h:panelGrid>
+	
+	</h:form>
 
 
-</body>
+</h:body>
 </html>

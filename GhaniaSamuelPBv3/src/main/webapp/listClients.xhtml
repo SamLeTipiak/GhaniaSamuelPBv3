@@ -72,9 +72,11 @@
 					action="#{clientController.loadClient(tempClient.idClient)}" />
 				<h:outputLabel>|</h:outputLabel>
 				<h:commandLink value="  Suppression "
-					action="#{clientController.deleteClient(tempClient.idClient)}" />
+					onclick="if (!confirm('Pas de regrets ?!')) return false"
+					action="#{clientController.deleteClient(tempClient.idClient)}" 
+					/>
 
-				<!-- onclick="if (!confirm('Pas de regrets ?!')) return false" -->
+				<!--  -->
 
 
 
