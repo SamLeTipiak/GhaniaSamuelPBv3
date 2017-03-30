@@ -5,12 +5,14 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
     
-<!--     <navigation-rule> -->
-<!--     <from-view-id>index.xhtml</from-view-id> -->
-<!--     <navigation-case> -->
-<!--     <from-outcome>createClient.xhtml</from-outcome> -->
-<!--     <to-view-id>createClient.xhtml</to-view-id> -->
-<!--     </navigation-case> -->
-<!--     </navigation-rule> -->
+
+    <navigation-rule>
+    <from-view-id>/index.xhtml</from-view-id>
+    <navigation-case>
+    <from-outcome>listClients</from-outcome>
+    <to-view-id>listClients.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule>
+
 
 </faces-config>

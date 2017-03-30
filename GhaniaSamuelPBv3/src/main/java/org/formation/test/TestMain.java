@@ -9,6 +9,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import org.formation.beans.Client;
+import org.formation.dao.DAOClient;
+import org.formation.dao.IDAOClient;
 import org.formation.presentation.ClientController;
 
 public class TestMain {
@@ -21,6 +23,7 @@ public class TestMain {
 
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
+		IDAOClient daoc = new DAOClient();
 
 		Client c1 = new Client("Pringuet", "Mathieu", "3 rue de Navarre", 75016, "Paris", "0602030407");
 		Client c2 = new Client("Bouchet", "Samuel", "3 rue des Cocotiers", 75016, "Paris", "0602030405");
@@ -38,7 +41,8 @@ public class TestMain {
 			em.persist(c4);
 			em.persist(c5);
 			em.persist(c6);
-			
+
+			System.out.println(daoc.readClient(7));
 
 			txn.commit();
 
@@ -51,24 +55,18 @@ public class TestMain {
 				em.close();
 			}
 		}
-		
+
 		List<Client> clients = new ArrayList<>();
 		ClientController clientController = new ClientController(clients);
-		
+
 		clientController.loadClients();
 		System.out.println("coucou");
-		System.out.println(clientController.readList().get(1));
-	
-		
-//		System.out.println(clientController.readClient(3));
-		
-		System.exit(0);
-		
-		
-		
-	}
-	
+		System.out.println(clientController.getClients().get(1));
 
-	
+		// System.out.println(clientController.readClient(3));
+
+		System.exit(0);
+
+	}
 
 }

@@ -23,7 +23,7 @@
 
 		<h:button value="Nouveau client" outcome="createClient.xhtml" />
 
-<!-- 		<f:event type="preRenderView" listener="#{clientController.loadClients()}" /> -->
+		<f:event type="preRenderView" listener="#{clientController.loadClients()}" />
 
 		<h:dataTable value="#{clientController.clients}" var="tempClient">
 

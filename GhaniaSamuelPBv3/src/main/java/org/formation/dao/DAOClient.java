@@ -38,7 +38,7 @@ public class DAOClient implements IDAOClient {
 				em.close();
 			}
 		}
-		System.exit(0);
+		
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class DAOClient implements IDAOClient {
 				em.close();
 			}
 		}
-		System.exit(0);
+		
 	}
 
 	@Override
@@ -89,7 +89,7 @@ public class DAOClient implements IDAOClient {
 				em.close();
 			}
 		}
-		System.exit(0);
+		
 		return client;
 	}
 
@@ -117,7 +117,7 @@ public class DAOClient implements IDAOClient {
 				em.close();
 			}
 		}
-		
+
 		return clients;
 
 	}
@@ -146,7 +146,7 @@ public class DAOClient implements IDAOClient {
 				em.close();
 			}
 		}
-		System.exit(0);
+		
 
 	}
 
