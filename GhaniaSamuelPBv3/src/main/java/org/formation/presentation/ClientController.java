@@ -1,5 +1,6 @@
 package org.formation.presentation;
 
-public class Presentation {
+public class ClientController {
+	
 
 }
