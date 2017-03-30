@@ -26,13 +26,13 @@ public class Client {
 	private String address;
 	private int zipCode;
 	private String city;
-	private int phoneNumer;
+	private String phoneNumer;
 
 	public Client() {
 		super();
 	}
 
-	public Client(String lastName, String firstName, String address, int zipCode, String city, int phoneNumer) {
+	public Client(String lastName, String firstName, String address, int zipCode, String city, String phoneNumer) {
 		super();
 		this.lastName = lastName;
 		this.firstName = firstName;
@@ -82,11 +82,11 @@ public class Client {
 		this.city = city;
 	}
 
-	public int getPhoneNumer() {
+	public String getPhoneNumer() {
 		return phoneNumer;
 	}
 
-	public void setPhoneNumer(int phoneNumer) {
+	public void setPhoneNumer(String phoneNumer) {
 		this.phoneNumer = phoneNumer;
 	}
 
