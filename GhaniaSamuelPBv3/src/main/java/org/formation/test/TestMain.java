@@ -14,12 +14,14 @@ public class TestMain {
 
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
+
 		Client c1 = new Client("Pringuet", "Mathieu", "3 rue de Navarre", 75016, "Paris", "0602030407");
 		Client c2 = new Client("Bouchet", "Samuel", "3 rue des Cocotiers", 75016, "Paris", "0602030405");
 		Client c3 = new Client("Bouzemame", "Ghania", "3 allée des Rosiers", 75016, "Paris", "0602030605");
 		Client c4 = new Client("Arthemise", "Jonas", "3 allée des Cacahuètes", 75016, "Paris", "0601030605");
 		Client c5 = new Client("Cornaton", "Kevin", "3 allée des Acacias", 75016, "Paris", "0603030605");
 		Client c6 = new Client("Potier", "Aurelie", "3 impasse Guenièvre", 75016, "Paris", "0602030606");
+
 		try {
 			txn.begin();
 
