@@ -3,7 +3,7 @@ Projet ProxiBanque 3ième Version
 #                    ***********  Application GhaniaSamuelPBv3  ***********
 
 Cette application a pour but de permettre la gestion client au sein du réseau d'agences ProxiBanque.
-Les utilisateurs (les conseillers de la banque) pourront ainsi **_créer_**, **_afficher_**, **_modifier_**, et **_supprimer_** des clients. Il pourront également effectuer ces mêmes actions sur les comptes bancaires associés aux clients, courant ou épargne.
+Les utilisateurs (les conseillers de la banque) pourront ainsi **_créer_**, **_afficher_**, **_modifier_**, et **_supprimer_** des clients.
 
 ***
 
@@ -14,6 +14,7 @@ Les utilisateurs (les conseillers de la banque) pourront ainsi **_créer_**, **_
 - un diagramme de cas d'utilisation
 - un diagramme de classes
 - un diagramme de déploiement
+- des maquettes dedes interfaces utilisateur actuelle et à venir
 
 ### Pour la partie documentation :
 
