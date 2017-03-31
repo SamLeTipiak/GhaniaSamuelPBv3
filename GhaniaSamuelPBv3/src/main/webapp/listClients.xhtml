@@ -67,17 +67,16 @@
 			<h:column>
 				<f:facet name="header"></f:facet>
 
-				<!--  the value for each row -->
-				<h:commandLink value=" Mise à Jour  "
+				<h:commandLink value=" Comptes "
+					action="#{clientController.loadAccount(tempClient.id)}" />
+				<h:outputLabel>|</h:outputLabel>
+				<h:commandLink value=" Mise à Jour "
 					action="#{clientController.loadClient(tempClient.id)}" />
 				<h:outputLabel>|</h:outputLabel>
-				<h:commandLink value="  Suppression "
+				<h:commandLink value=" Suppression "
 					onclick="if (!confirm('Pas de regrets ?!')) return false"
 					action="#{clientController.deleteClient(tempClient.id)}" 
 					/>
-
-				<!--  -->
-
 
 
 			</h:column>

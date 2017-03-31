@@ -3,12 +3,16 @@ package org.formation.presentation;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import org.formation.beans.Account;
+import org.formation.beans.Client;
 import org.formation.service.IServiceAccount;
 
 @ManagedBean
@@ -82,6 +86,25 @@ public class AccountController implements Serializable {
 
 	public List<Account> getAccounts() {
 		return accounts;
+	}
+	
+public String loadAccount(int idClient) {
+		
+		try {
+
+			List<Account> accounts  = serviceClient.readClient(idClient);
+
+			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+
+			Map<String, Object> requestMap = externalContext.getRequestMap();
+			requestMap.put("accounts", accounts);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "";
+		}
+
+		return "update.xhtml";
 	}
 
 }

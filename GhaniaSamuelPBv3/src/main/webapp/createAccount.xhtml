@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<h:body>
+
+	<h:form>
+		<h:panelGrid columns="3">
+
+			<h:outputLabel>Création du compte courant</h:outputLabel>
+
+			<h:outputLabel>Date de création  : </h:outputLabel>
+			<h:inputText id="date1" value="#{client.currentAccount.openDate}" />
+			<h:message for="date1"></h:message>
+
+			<h:outputLabel>Solde initial : </h:outputLabel>
+			<h:inputText id="sold1" value="#{client.currentAccount.sold}" />
+			<h:message for="sold1"></h:message>
+
+
+			<h:outputLabel>Date de création  : </h:outputLabel>
+			<h:inputText id="date2" value="#{client.savingAccount.openDate}" />
+			<h:message for="date2"></h:message>
+
+			<h:outputLabel>Solde initial : </h:outputLabel>
+			<h:inputText id="sold2" value="#{client.savingAccount.sold}" />
+			<h:message for="sold2"></h:message>
+
+		</h:panelGrid>
+
+	</h:form>
+
+
+</h:body>
+</html>

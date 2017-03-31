@@ -36,7 +36,7 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
 			<h:inputText id="phone" value="#{client.phoneNumer}" />
 			<h:message for="phone"></h:message>
 			
-			<h:inputHidden value="#{client.idClient}" />
+			<h:inputHidden value="#{client.id}" />
 			
 			<h:commandButton value="Sauvegarde" action="#{clientController.updateClient(client)}"/>
 		
