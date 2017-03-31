@@ -13,6 +13,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.formation.dao.DAOClient;
+
+/**
+ * <b>Agence représente les différentes agences du réseau ProxiBanque.</b>
+ * <p>Chacune est caractérisée par :
+ * <ul>
+ * <li>idAgence : un identifiant généré automatiquement (par incrémentation à partir de 1) au niveau de la base de données.</li>
+ * <li>creationDate : sa date de création</li>
+ * </p>
+ * <p>De plus, chaque agence a aussi une liste de conseillers et une autre de clients qui peuvent chacune être modifiées.
+ * </p>
+ * @see Agence#addAdviser(Adviser)
+ * @see Agence#addClient(Client)
+ * @see DAOClient#deleteClient(long)
+ * @author Samuel Bouchet - Ghania Bouzemame
+ * @version 3.0
+ *
+ */
 @ManagedBean
 @Entity
 public class Agence {
@@ -21,8 +39,11 @@ public class Agence {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long idAgence;
 	private String creationDate;
-	@OneToMany( cascade=CascadeType.ALL)
-	private List<Adviser> Advisers = new ArrayList<>();
+	
+	@OneToMany(mappedBy="agence", cascade=CascadeType.ALL)
+	private List<Adviser> advisers = new ArrayList<>();
+	
+	@OneToMany(mappedBy="agence", cascade=CascadeType.ALL)
 	private Set<Client>clients = new HashSet<>();
 	
 	public Agence() {
@@ -40,16 +61,37 @@ public class Agence {
 		this.creationDate = creationDate;
 	}
 	public List<Adviser> getAdvisers() {
-		return Advisers;
+		return advisers;
 	}
 	public void setAdvisers(List<Adviser> advisers) {
-		Advisers = advisers;
+		this.advisers = advisers;
 	}
 	public Set<Client> getClients() {
 		return clients;
 	}
 	public void setClients(Set<Client> clients) {
 		this.clients = clients;
+	}
+	
+	
+	/**
+	 * addClientToAgence() permet d'associer un client à une agence donnée.
+	 * @param client
+	 */
+	public void addClientToAgence(Client client) {
+
+		client.setAgence(this);
+		this.clients.add(client);
+	}
+	
+	/**
+	 * addAdviser() permet d'associer un conseillé à une agence donnée.
+	 * @param adviser
+	 */
+	public void addAdviser(Adviser adviser) {
+
+		adviser.setAgence(this);
+		this.advisers.add(adviser);
 	}
 	@Override
 	public String toString() {
