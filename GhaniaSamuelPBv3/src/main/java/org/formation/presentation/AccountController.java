@@ -21,7 +21,7 @@ public class AccountController implements Serializable {
 	IServiceAccount serviceAccount;
 
 	private List<Account> accounts = new ArrayList<>();
-	Account account = new Account();
+//	Account account = new Account();
 
 	public AccountController() {
 		super();
