@@ -6,10 +6,10 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
 
 import org.formation.beans.Account;
 import org.formation.service.IServiceAccount;
-import org.formation.service.ServiceAccount;
 
 @ManagedBean
 @SessionScoped
@@ -17,7 +17,8 @@ public class AccountController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	IServiceAccount serviceAccount = new ServiceAccount();
+	@Inject
+	IServiceAccount serviceAccount;
 
 	private List<Account> accounts = new ArrayList<>();
 	Account account = new Account();

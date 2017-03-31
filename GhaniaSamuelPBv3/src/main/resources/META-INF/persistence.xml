@@ -4,6 +4,10 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
 	<persistence-unit name="my-pu" transaction-type="RESOURCE_LOCAL">
+	
+	<class>org.formation.beans.Actor</class>
+	<class>org.formation.beans.Adviser</class>
+	<class>org.formation.beans.Client</class>
 		<properties>
 
 			<!-- Database connection settings -->

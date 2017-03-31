@@ -9,19 +9,19 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 import org.formation.beans.Client;
 import org.formation.service.IServiceClient;
-import org.formation.service.ServiceClient;
 
 @ManagedBean
 @SessionScoped
-public class ClientController implements Serializable{
+public class ClientController implements Serializable {
 
-	 private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-
-	IServiceClient serviceClient = new ServiceClient();
+	@Inject
+	IServiceClient serviceClient;
 
 	private List<Client> clients = new ArrayList<>();
 	Client client = new Client();
@@ -45,7 +45,7 @@ public class ClientController implements Serializable{
 			e.printStackTrace();
 			return "";
 		}
-		return "listClients.xhtml";	
+		return "listClients.xhtml";
 	}
 
 	public String updateClient(Client client) {
@@ -102,24 +102,23 @@ public class ClientController implements Serializable{
 	public List<Client> getClients() {
 		return clients;
 	}
-	
-	
-	public String loadClient(int idClient){
-		
+
+	public String loadClient(int idClient) {
+
 		try {
-			
+
 			Client client = serviceClient.readClient(idClient);
-			
+
 			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
 
 			Map<String, Object> requestMap = externalContext.getRequestMap();
 			requestMap.put("client", client);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "";
 		}
-		
+
 		return "update.xhtml";
 	}
 

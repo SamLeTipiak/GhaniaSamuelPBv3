@@ -3,13 +3,15 @@ package org.formation.service;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.formation.beans.Account;
-import org.formation.dao.DAOAccount;
 import org.formation.dao.IDAOAccount;
 
 public class ServiceAccount implements IServiceAccount {
 
-	IDAOAccount daoAccount = new DAOAccount();
+	@Inject
+	IDAOAccount daoAccount;
 
 	@Override
 	public void createAccount(Account account) throws SQLException {
