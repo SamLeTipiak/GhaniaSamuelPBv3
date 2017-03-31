@@ -1,8 +1,5 @@
 package org.formation.test;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,9 +12,6 @@ import org.formation.beans.Client;
 public class TestMain {
 	static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-pu");
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 		EntityManager em = emf.createEntityManager();
@@ -36,7 +30,7 @@ public class TestMain {
 		// 75016, "Paris", "0603030605");
 		// Client c6 = new Client("Potier", "Aurelie", "3 impasse Guenièvre",
 		// 75016, "Paris", "0602030606");
-		Client client1 = new Client("kiki", "hugo", "45 rue belle", 45645, "paris", "124578996");
+		Client client1 = new Client("45 rue belle", 45645, "paris", "124578996");
 
 	
 		Account ac1 = new Account(5644.34, "565", type.SavingAccount);

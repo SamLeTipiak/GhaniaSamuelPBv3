@@ -8,7 +8,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+/**
+ * <b>Account représente les comptes bancaires ouverts chez ProxiBanque.</b>
+ * <p>Chaque compte est caractérisé par les informations suivantes :
+ * <ul>
+ * <li>idAccount : un identifiant généré automatiquement au niveau de la base de données</li>
+ * <li>accountNumber : le numéro de compte</li>
+ * <li>sold : le solde du compte</li>
+ * <li>openDate : la date d'ouverture du compte</li>
+ * <li>accountType : le type de compte, courant ou épargne</li>
+ * <li>accountRate : la rémunération du compte</li>
+ * </ul>
+ * </p>
+ * <p>Chaque compte est aussi associé à un client.</p>
+ * @author Bouchet Samuel - Ghania Bouzemame
+ * @version 3.0
+ *
+ */
 @ManagedBean
 @Entity
 public class Account {

@@ -1,9 +1,26 @@
 package org.formation.beans;
 
-public class Actor {
+import javax.persistence.Column;
+
+/**
+ * <b>Actor représente les différents acteurs au sein d'une agence.</b>
+ * <p>Chacun est caractérisé par les informations suivantes :
+ * <ul>
+ * <li>idAgence : l'identifiant de l'agence à laquelle il est rattaché.</li>
+ * <li>lastName : son nom de famille</li>
+ * <li>firstName : son prénom</li>
+ * </ul>
+ * </p>
+ * @author Samuel Bouchet - Ghania Bouzemame
+ * @version 3.0
+ *
+ */
+public abstract class Actor {
 	
 	private long idAgence;
+	@Column(nullable=false)
 	private String lastName;
+	@Column(nullable=false)
 	private String firstName;
 	
 	public Actor() {
