@@ -4,6 +4,11 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+<<<<<<< HEAD
+=======
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+        <property name="context-root" value="GhaniaSamuelPBv3"/>
+>>>>>>> df7d1dfd3b116e1d2a1ad572f1b0c9e8f2bb29ff
         <property name="java-output-path" value="/GhaniaSamuelPBv3/target/classes"/>
         <property name="context-root" value="SimpleMavenWarInject"/>
     </wb-module>

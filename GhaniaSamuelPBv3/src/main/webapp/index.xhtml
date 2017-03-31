@@ -7,15 +7,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Bienvenue</title>
 </head>
+
 <h:body>
 
-	<h1>Accueil</h1>
-	<h2>Service banquaire ProxiBanque</h2>
-
-<br />
-
-<h:button value="Liste des clients : créer, modifier, supprimer" outcome="listClients" />
+<h1>Accueil</h1>
+<h2>Service banquaire ProxiBanque</h2>
 
 
+
+<h:button
+	value="Liste des clients : créer, modifier, supprimer et faire un virement"
+	outcome="listClients.xhtml" />
+
+<p />
+
+<h:button value="Audit : lancer un audit sur une agence"
+	outcome="audit.xhtml" />
+	
 </h:body>
 </html>
