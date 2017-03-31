@@ -26,6 +26,10 @@ public class DAOAccount implements IDAOAccount {
 	/* (non-Javadoc)
 	 * @see org.formation.dao.IDAOAccount#createAccount(org.formation.beans.Account)
 	 */
+	/**
+	 * Cette méthode permet de créer un compte.
+	 * @param account
+	 */
 	@Override
 	public void createAccount(Account account) throws SQLException {
 
@@ -52,6 +56,10 @@ public class DAOAccount implements IDAOAccount {
 
 	/* (non-Javadoc)
 	 * @see org.formation.dao.IDAOAccount#updateAccount(org.formation.beans.Account)
+	 */
+	/**
+	 * Cette méthode permet la modification d'un compte donné.
+	 * @param account
 	 */
 	@Override
 	public void updateAccount(Account account) throws SQLException {
@@ -80,6 +88,11 @@ public class DAOAccount implements IDAOAccount {
 
 	/* (non-Javadoc)
 	 * @see org.formation.dao.IDAOAccount#readListAccount(long)
+	 */
+	/**
+	 * Cette méthode permet d'afficher la liste des comptes d'un client donné.
+	 * @param idClient
+	 * @return accounts
 	 */
 	@Override
 	public List<Account> readListAccount(long idClient) throws SQLException {
@@ -117,6 +130,10 @@ public class DAOAccount implements IDAOAccount {
 
 	/* (non-Javadoc)
 	 * @see org.formation.dao.IDAOAccount#deleteAccount(long)
+	 */
+	/**
+	 * Cette méthode permet la suppression de comptes.
+	 * @param idAccount
 	 */
 	@Override
 	public void deleteAccount(long idAccount) throws SQLException {

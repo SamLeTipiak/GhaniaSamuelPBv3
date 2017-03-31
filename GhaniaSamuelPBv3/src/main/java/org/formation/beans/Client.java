@@ -17,8 +17,6 @@ import org.formation.dao.DAOAccount;
  * <p>
  * Chaque client est aussi caractérisé par les informations suivantes :
  * <ul>
- * <li>idClient : un identifiant généré automatiquement (par incrémentation à
- * partir de 1) par la base de données</li>
  * <li>address : son adresse physique</li>
  * <li>zipcode : le code postal</li>
  * <li>city : la ville</li>
@@ -93,8 +91,6 @@ public class Client extends Actor {
 		this.currentAccount = currentAccount;
 	}
 
-
-	
 	public String getAddress() {
 		return address;
 	}

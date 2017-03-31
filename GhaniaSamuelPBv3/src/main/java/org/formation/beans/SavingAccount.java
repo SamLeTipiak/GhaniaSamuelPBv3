@@ -5,6 +5,18 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+/**
+ * <b>SavingAccount représente les comptes épargne ouverts chez ProxiBanque.</b>
+ * <p>Chaque compte épargne est caractérisé par :
+ * <ul>
+ * <li>SAVINGRATE : la rémunération du compte</li>
+ * </ul>
+ * </p>
+ * <p>Chaque compte épargne est aussi associé à un client.</p>
+ * @author Bouchet Samuel - Ghania Bouzemame
+ * @version 3.0
+ *
+ */
 @Entity
 public class SavingAccount extends Account {
 	private static float SAVINGRATE = 0.03f;

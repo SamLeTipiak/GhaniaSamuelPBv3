@@ -14,8 +14,7 @@ import org.formation.dao.DAOClient;
 
 /**
  * <b>Adviser représente les différents conseillers d'une agence.</b>
- * <p>Cette classe étend la classe Actor et hérite donc de ses propriétés. Chaque conseiller est aussi caractérisé par :</p>
- * <p>idAdviser : un identifiant généré automatiquement (par incrémentation) au niveau de la base de données.</p>
+ * <p>Cette classe étend la classe Actor et hérite donc de ses propriétés.</p>
  * <p>De plus, chaque conseiller a aussi une liste de clients (au plus 10).
  * </p>
  * @see Adviser#addClient(Client)
