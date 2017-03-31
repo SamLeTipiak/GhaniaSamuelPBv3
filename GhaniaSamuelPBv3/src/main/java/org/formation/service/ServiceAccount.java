@@ -28,7 +28,6 @@ public class ServiceAccount implements IServiceAccount {
 	public List<Account> readListAccount(long idClient) throws SQLException {
 		List<Account> accounts = daoAccount.readListAccount(idClient);
 		return accounts;
-
 	}
 
 	@Override

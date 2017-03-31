@@ -14,6 +14,7 @@ import javax.inject.Inject;
 import org.formation.beans.Account;
 import org.formation.beans.Client;
 import org.formation.service.IServiceAccount;
+import org.formation.service.ServiceAccount;
 
 @ManagedBean
 @SessionScoped
@@ -21,8 +22,11 @@ public class AccountController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	IServiceAccount serviceAccount;
+//	@Inject
+//	IServiceAccount serviceAccount;
+	
+	IServiceAccount serviceAccount = new ServiceAccount();
+	
 
 	private List<Account> accounts = new ArrayList<>();
 //	Account account = new Account();
@@ -92,12 +96,13 @@ public String loadAccount(int idClient) {
 		
 		try {
 
-			List<Account> accounts  = serviceClient.readClient(idClient);
+			List<Account> accounts  = serviceAccount.readListAccount(idClient);
 
 			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
 
 			Map<String, Object> requestMap = externalContext.getRequestMap();
-			requestMap.put("accounts", accounts);
+			requestMap.put("currentAccount", accounts.get(0));
+			requestMap.put("savingAccount", accounts.get(1));
 
 		} catch (Exception e) {
 			e.printStackTrace();

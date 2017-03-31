@@ -11,6 +11,7 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import org.formation.beans.Account;
+import org.formation.beans.Client;
 
 /**
  * <b>DAOAccount implémente l'interface IDAOAccount et contient les méthodes qui vont permettre la persistence des objets de type compte en base de données.</b>
@@ -85,13 +86,18 @@ public class DAOAccount implements IDAOAccount {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction txn = em.getTransaction();
 		List<Account> accounts = new ArrayList<>();
+		Client client = new Client();
 
 		try {
 			txn.begin();
 
-			TypedQuery<Account> query = em.createQuery("from Account", Account.class);
-
-			accounts = query.getResultList();
+			client = em.find(Client.class, idClient);
+			
+			if(client.getCurrentAccount()!=null){
+				accounts.add(client.getCurrentAccount());
+			} if(client.getSavingAccount()!=null){
+				accounts.add(client.getSavingAccount());
+			}
 
 			txn.commit();
 
