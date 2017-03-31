@@ -14,27 +14,33 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
 	<h:form>
 		<h:panelGrid columns="3">
 			<h:outputLabel>Prénom : </h:outputLabel>
-			<h:inputText id="firstName" value="#{client.firstName}" />
-			<h:message for="firstName"></h:message>
+			<h:inputText id="firstName" value="#{client.firstName}" required="true" >
+			<f:validateLength minimum="1"></f:validateLength> </h:inputText>
+			<h:message for="firstName" ></h:message>
 			
 			<h:outputLabel>Nom : </h:outputLabel>
-			<h:inputText id="lastName" value="#{client.lastName}" />
+			<h:inputText id="lastName" value="#{client.lastName}" required="true">
+			<f:validateLength minimum="1"></f:validateLength> </h:inputText>
 			<h:message for="lastName"></h:message>	
 			
 			<h:outputLabel>Adresse : </h:outputLabel>
-			<h:inputText id="address" value="#{client.address}" />
+			<h:inputText id="address" value="#{client.address}" required="true">
+			<f:validateLength minimum="1"></f:validateLength> </h:inputText>
 			<h:message for="address"></h:message>
 			
 			<h:outputLabel>Code Postal : </h:outputLabel>
-			<h:inputText id="zipcode" value="#{client.zipCode}" />
+			<h:inputText id="zipcode" value="#{client.zipCode}" required="true">
+			<f:validateLongRange minimum="3"> </f:validateLongRange> </h:inputText>
 			<h:message for="zipcode"></h:message>
 			
 			<h:outputLabel>Ville : </h:outputLabel>
-			<h:inputText id="city" value="#{client.city}" />
+			<h:inputText id="city" value="#{client.city}" required="true">
+			<f:validateLength minimum="1"></f:validateLength> </h:inputText>
 			<h:message for="city"></h:message>
 			
 			<h:outputLabel>Numéro : </h:outputLabel>
-			<h:inputText id="phone" value="#{client.phoneNumer}" />
+			<h:inputText id="phone" value="#{client.phoneNumer}" required="true">
+			<f:validateLongRange minimum="10"></f:validateLongRange> </h:inputText>
 			<h:message for="phone"></h:message>
 
 			

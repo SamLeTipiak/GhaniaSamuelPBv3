@@ -4,10 +4,9 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-
 <f:metadata>
 	<f:event type="preRenderView"
-		listener="#{clientController.loadClients()}" />
+		listener="#{clientController.loadAccounts()}" />
 </f:metadata>
 
 <head>
@@ -16,22 +15,16 @@
 </head>
 <h:body>
 
-	<h1>Liste des clients de la banque.</h1>
+	<h1>Liste des comptes.</h1>
 
 	<h:form>
 
-		<h:outputText value="Création d'un nouveau client : " />
 
-		<h:button value="Nouveau client" outcome="createClient.xhtml" />
-
-		<f:event type="preRenderView"
-			listener="#{clientController.loadClients()}" />
-
-		<h:dataTable value="#{clientController.clients}" var="tempClient">
+		<h:dataTable value="#{accountController.currentAccount}" var="tempCAccount">
 
 			<h:column>
 				<f:facet name="header">Identifiant</f:facet>
-				<h:outputText value="#{tempClient.id}" />
+				<h:outputText value="#{tempCAccount.id}" />
 			</h:column>
 
 			<h:column>
@@ -65,9 +58,11 @@
 			</h:column>
 
 			<h:column>
-				<f:facet name="header">Actions disponibles</f:facet>
+				<f:facet name="header"></f:facet>
 
-
+				<h:commandLink value=" Comptes "
+					action="#{clientController.loadAccount(tempClient.id)}" />
+				<h:outputLabel>|</h:outputLabel>
 				<h:commandLink value=" Mise à Jour "
 					action="#{clientController.loadClient(tempClient.id)}" />
 				<h:outputLabel>|</h:outputLabel>
@@ -89,4 +84,12 @@
 
 
 </h:body>
+</html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
 </html>
