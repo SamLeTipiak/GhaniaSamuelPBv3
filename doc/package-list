@@ -1,0 +1,5 @@
+org.formation.beans
+org.formation.dao
+org.formation.presentation
+org.formation.service
+org.formation.test
