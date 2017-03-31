@@ -138,11 +138,8 @@ public class DAOClient implements IDAOClient {
 
 		try {
 			txn.begin();
-
 			TypedQuery<Client> query = em.createQuery("from Client", Client.class);
-
 			clients = query.getResultList();
-
 			txn.commit();
 			
 		} catch (Exception e) {
@@ -154,7 +151,7 @@ public class DAOClient implements IDAOClient {
 				em.close();
 			}
 		}
-
+		System.out.println(clients.get(0));
 		return clients;
 
 	}

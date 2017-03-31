@@ -43,11 +43,11 @@ public class Client extends Actor {
 	private String phoneNumer;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	private Account savingAccount;
+	private SavingAccount savingAccount;
 	// private Set<Account> accounts = new HashSet<>();
 
 	@OneToOne(cascade = CascadeType.ALL)
-	private Account currentAccount;
+	private CurrentAccount currentAccount;
 
 	@ManyToOne
 	@JoinColumn(name = "agence_id")
@@ -91,6 +91,17 @@ public class Client extends Actor {
 		this.currentAccount = currentAccount;
 	}
 
+//	public Client(long idAgence, String lastName, String firstName, String address, int zipCode, String city, String phoneNumer, SavingAccount savingAccount,
+//			CurrentAccount currentAccount) {
+//		super(idAgence, idAdviser, lastName, firstName);
+//		this.address = address;
+//		this.zipCode = zipCode;
+//		this.city = city;
+//		this.phoneNumer = phoneNumer;
+//		this.savingAccount = savingAccount;
+//		this.currentAccount = currentAccount;
+//	}
+	
 	public String getAddress() {
 		return address;
 	}
@@ -139,19 +150,23 @@ public class Client extends Actor {
 		this.adviser = adviser;
 	}
 
-	public Account getSavingAccount() {
+
+
+
+
+	public SavingAccount getSavingAccount() {
 		return savingAccount;
 	}
 
-	public void setSavingAccount(Account savingAccount) {
+	public void setSavingAccount(SavingAccount savingAccount) {
 		this.savingAccount = savingAccount;
 	}
 
-	public Account getCurrentAccount() {
+	public CurrentAccount getCurrentAccount() {
 		return currentAccount;
 	}
 
-	public void setCurrentAccount(Account currentAccount) {
+	public void setCurrentAccount(CurrentAccount currentAccount) {
 		this.currentAccount = currentAccount;
 	}
 

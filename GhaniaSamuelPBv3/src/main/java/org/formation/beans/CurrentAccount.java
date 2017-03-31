@@ -1,9 +1,11 @@
 package org.formation.beans;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+@Entity
 public class CurrentAccount extends Account {
 	private static float CURRENTRATE=0.00f;
 
