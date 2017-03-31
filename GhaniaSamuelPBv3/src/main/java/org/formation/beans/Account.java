@@ -16,7 +16,6 @@ import javax.persistence.ManyToOne;
  * <li>accountNumber : le numéro de compte</li>
  * <li>sold : le solde du compte</li>
  * <li>openDate : la date d'ouverture du compte</li>
- * <li>accountType : le type de compte, courant ou épargne</li>
  * <li>accountRate : la rémunération du compte</li>
  * </ul>
  * </p>

@@ -14,6 +14,7 @@ import javax.persistence.InheritanceType;
  * <p>
  * Chacun est caractérisé par les informations suivantes :
  * <ul>
+ * <li>id : l'identifiant de l'acteur au sein de l'agence. Cet identifiant est généré automatiquement par incrémentation au niveau de la base de données.</li>
  * <li>idAgence : l'identifiant de l'agence à laquelle il est rattaché.</li>
  * <li>lastName : son nom de famille</li>
  * <li>firstName : son prénom</li>

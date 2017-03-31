@@ -91,16 +91,6 @@ public class Client extends Actor {
 		this.currentAccount = currentAccount;
 	}
 
-//	public Client(long idAgence, String lastName, String firstName, String address, int zipCode, String city, String phoneNumer, SavingAccount savingAccount,
-//			CurrentAccount currentAccount) {
-//		super(idAgence, idAdviser, lastName, firstName);
-//		this.address = address;
-//		this.zipCode = zipCode;
-//		this.city = city;
-//		this.phoneNumer = phoneNumer;
-//		this.savingAccount = savingAccount;
-//		this.currentAccount = currentAccount;
-//	}
 	
 	public String getAddress() {
 		return address;
