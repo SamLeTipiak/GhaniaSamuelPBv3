@@ -5,12 +5,15 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.formation.beans.Client;
+import org.formation.dao.DAOClient;
 import org.formation.dao.IDAOClient;
 
 public class ServiceClient implements IServiceClient {
 
-	@Inject
-	IDAOClient daoClient;
+//	@Inject
+//	IDAOClient daoClient;
+	
+	IDAOClient daoClient = new DAOClient();
 
 	@Override
 	public void createClient(Client client) throws Exception {
@@ -35,7 +38,6 @@ public class ServiceClient implements IServiceClient {
 
 	@Override
 	public List<Client> readList() throws Exception {
-
 		List<Client> clients = daoClient.readList();
 		return clients;
 	}

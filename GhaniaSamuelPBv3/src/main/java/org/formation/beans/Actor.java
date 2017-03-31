@@ -48,6 +48,9 @@ public abstract class Actor {
 		this.lastName = lastName;
 		this.firstName = firstName;
 	}
+	
+
+	
 
 	public Actor(String lastName, String firstName) {
 		super();

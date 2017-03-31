@@ -22,9 +22,16 @@ public class TestMain {
 		
 		SavingAccount sa1 = new SavingAccount(123, 35.4, "46465");
 		CurrentAccount ca1 = new CurrentAccount(456, 4648644.5464, "lundi");
-		Client client1 = new Client(1, "curie", "pierre", "45 rue belle", 45645, "paris", "124578996", sa1, ca1);
+		Client client1 = new Client(1, "curie", "pierre", "45 rue belle", 75645, "paris", "124578996", sa1, ca1);
 
-	
+		SavingAccount sa2 = new SavingAccount(456, -58.4, "15/9/45");
+		CurrentAccount ca2 = new CurrentAccount(789, 644.5464, "mardi dernier");
+		Client client2 = new Client(1, "Emile", "Image", "45 rue de lumière", 4645, "Orléans", "145578996", sa2, ca2);
+
+		SavingAccount sa3 = new SavingAccount(456, -58.4, "1/11/85");
+		CurrentAccount ca3 = new CurrentAccount(789, 644.5464, "jeudi dernier");
+		Client client3 = new Client(1, "Jean", "Jacques", "45 rue de la musique", 69645, "Lyon", "085578996", sa3, ca3);
+
 		
 //		Set<Account> accounts = new HashSet<>();
 	
@@ -42,9 +49,12 @@ public class TestMain {
 			// client1.setAc(ac1);
 			// em.persist(client1);
 
-			client1.setSavingAccount(sa1);
-			client1.setCurrentAccount(ca1);
+//			client1.setSavingAccount(sa1);
+//			client1.setCurrentAccount(ca1);
 			em.persist(client1);
+			em.persist(client2);
+			em.persist(client3);
+			
 			
 			txn.commit();
 

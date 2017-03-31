@@ -13,15 +13,18 @@ import javax.inject.Inject;
 
 import org.formation.beans.Client;
 import org.formation.service.IServiceClient;
+import org.formation.service.ServiceClient;
 
 @ManagedBean
 @SessionScoped
-public class ClientController implements Serializable {
+public class ClientController  {  //implements Serializable
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	IServiceClient serviceClient;
+//	@Inject
+//	IServiceClient serviceClient;
+	
+	IServiceClient serviceClient = new ServiceClient();
 
 	private List<Client> clients = new ArrayList<>();
 	Client client = new Client();
@@ -73,9 +76,11 @@ public class ClientController implements Serializable {
 	}
 
 	public void loadClients() {
+		
 		clients.clear();
 
 		try {
+
 			clients = serviceClient.readList();
 
 		} catch (Exception e) {
@@ -104,7 +109,7 @@ public class ClientController implements Serializable {
 	}
 
 	public String loadClient(int idClient) {
-
+		
 		try {
 
 			Client client = serviceClient.readClient(idClient);

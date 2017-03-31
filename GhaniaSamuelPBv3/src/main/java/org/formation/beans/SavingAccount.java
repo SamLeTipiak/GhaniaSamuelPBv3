@@ -1,9 +1,11 @@
 package org.formation.beans;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+@Entity
 public class SavingAccount extends Account {
 	private static float SAVINGRATE = 0.03f;
 
