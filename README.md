@@ -22,6 +22,6 @@ Les utilisateurs (les conseillers de la banque) pourront ainsi **_créer_**, **_
 
 ### L'application à proprement parler, sous la forme de :
 
-- un lien Git vers le projet 
-- le dossier Eclipse du projet
-- la base de données MySQL 
+- un lien Git vers le projet : https://github.com/SamLeTipiak/GhaniaSamuelPBv3.git
+- le dossier Eclipse du projet : GhaniaSamuelPBv3
+- la base de données MySQL : ghaniasampbv3.sql
